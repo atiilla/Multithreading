@@ -3,7 +3,8 @@ package be.intecbrussel.multithreading;
 public class Exercise1 {
 	public static void main(String[] args) {
 		int C0res = Thread.activeCount();
-		System.out.println("# CPU INFORMATION #\nYou have " + C0res + " core." + "\nIt is " + Thread.currentThread().getState()
+		int cores = Runtime.getRuntime().availableProcessors();
+		System.out.println("# CPU INFORMATION #\nYou have " + cores + " core." + "\nIt is " + Thread.currentThread().getState()
 				+ "\nisAlive?: " + Thread.currentThread().isAlive()+"\n");
 		int n = 8; // Number of threads
 		for (int i = 0; i < 8; i++) {
@@ -14,7 +15,7 @@ public class Exercise1 {
 				// 1000 miliseconds = 1 second
 
 				if (C0res >= 1) {
-					Thread.sleep(500);
+					Thread.sleep(2000);
 				} else if (C0res >= 2) {
 					Thread.sleep(400);
 
