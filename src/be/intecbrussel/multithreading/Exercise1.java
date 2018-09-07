@@ -6,6 +6,13 @@ public class Exercise1 {
 		for (int i = 0; i < 8; i++) {
 			
 			run();
+			
+			try {
+				Thread.sleep(1000); // 1000 miliseconds  = 1 second
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -15,6 +22,7 @@ public class Exercise1 {
 			System.out.println("Thread " + Thread.currentThread().getId() + " is running");
 			System.out.println(Thread.currentThread().getName());
 			System.out.println(Thread.currentThread().getState());
+			System.out.println(Thread.currentThread().isAlive());
 
 		} catch (Exception e) {
 			// Throwing an exception
